@@ -1,0 +1,1 @@
+I have been looking for a decent HTML to PDF converter library within Python; and sadly the existing options perform miserably when generating the pdf.  Among other options, the most reasonable performer was this command line tool called wkhtmltopdf "https://wkhtmltopdf.org" 
