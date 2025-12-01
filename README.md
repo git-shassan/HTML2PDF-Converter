@@ -17,6 +17,6 @@ With the html file (`sample.html` in this example) in your current directory:
 podman run --name html2pdf -it --rm -v $(pwd)/:/files:Z localhost/html2pdf wkhtmltopdf -s "Legal" --title "sample pdf" /files/sample.html /files/sample.pdf
 ```
 
-Tops: 
+Tips: 
 * Instead of the input file `/files/sample.html' , you can provide any URL as well
 * You can replace the part after 'wkhtmltopdf', with '-H', to see various command line options the tool offers
