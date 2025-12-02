@@ -7,7 +7,7 @@ The repo shares the simple Dockerfile that you can use to build an html2pdf conv
 
 ### The steps to build:
 You don't have to build this image from scratch. A ready to use copy avaialble at: 
-'podman pull quay.io/sfhassan/html2pdf' or 'docker pull farzee/html2pdf'
+`podman pull quay.io/sfhassan/html2pdf` or `docker pull farzee/html2pdf`
 
 Alternatively you can build and run your own local copy:
 
