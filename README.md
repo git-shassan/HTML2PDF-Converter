@@ -20,3 +20,11 @@ podman run --name html2pdf -it --rm -v $(pwd)/:/files:Z localhost/html2pdf wkhtm
 Tips: 
 * Instead of the input file `/files/sample.html' , you can provide any URL as well
 * You can replace the part after 'wkhtmltopdf', with '-H', to see various command line options the tool offers
+
+### To run securely:
+Since the intent of running this as container was to limit what the application can do and how many resources it can consume, the following additional flags can be used when running it. Use of podman already limits the ability of the container to some extent, but these additional flags are inline with the generic hardening steps on top of running a non-root container: 
+```
+podman run --name html2pdf -it --rm --userns=keep-id --read-only --pids-limit 50 --memory 8m --cap-drop ALL --network none -v $(pwd)/:/files:Z localhost/html2pdf wkhtmltopdf -s "Legal" --title "sample pdf" /files/sample.html /files/sample.pdf
+```
+
+Note, in addition to the above, cpu resources can also be limited using "--cpus 0.5" or "--cpu-quota=50000 --cpu-period=100000" parameters. Your system will suppor that only if you see cpu in the output of : 'find /sys/fs/cgroup -type d'
